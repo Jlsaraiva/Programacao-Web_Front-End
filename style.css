@@ -1,0 +1,182 @@
+/* Estilo global */
+body {
+  margin: 0; /* Remove margem padrão do corpo */
+  font-family: Arial, sans-serif; /* Define fonte padrão */
+  background-color: #f9f9f9; /* Cor de fundo do site */
+  color: #333; /* Cor do texto */
+  line-height: 1.6; /* Altura entre linhas */
+}
+
+/* Header (cabeçalho) */
+header {
+  background-color: #f4a261; /* Cor de fundo do cabeçalho */
+  color: #fff; /* Cor do texto do cabeçalho */
+  text-align: center; /* Centraliza o texto */
+  padding: 20px 10px; /* Espaçamento interno */
+}
+
+header h1 {
+  margin: 0; /* Remove margens do título principal */
+  font-size: 2.5em; /* Define o tamanho do título */
+}
+
+header h2 {
+  margin: 10px 0; /* Margem entre o título principal e o subtítulo */
+  font-size: 1.2em; /* Tamanho do subtítulo */
+}
+
+/* Menu de navegação */
+nav ul {
+  list-style: none; /* Remove marcadores de lista */
+  margin: 0; /* Remove margem padrão */
+  padding: 0; /* Remove padding padrão */
+  display: flex; /* Exibe itens em linha */
+  justify-content: center; /* Centraliza itens horizontalmente */
+  background-color: #2a9d8f; /* Cor de fundo do menu */
+}
+
+nav ul li {
+  position: relative; /* Define o contexto para os submenus */
+  padding: 15px 20px; /* Espaçamento interno dos itens */
+  cursor: pointer; /* Altera o cursor para indicar clicável */
+  color: #fff; /* Cor do texto dos itens */
+}
+
+nav ul ul {
+  display: none; /* Submenus ficam ocultos por padrão */
+  position: absolute; /* Posicionamento relativo ao pai */
+  left: 0; /* Submenu alinha à esquerda */
+  top: 100%; /* Submenu aparece abaixo do item principal */
+  background-color: #264653; /* Cor de fundo do submenu */
+  list-style: none; /* Remove marcadores de lista */
+  padding: 0; /* Remove espaçamento interno */
+}
+
+nav ul li:hover > ul {
+  display: block; /* Exibe o submenu ao passar o mouse */
+}
+
+nav ul ul li {
+  padding: 10px; /* Espaçamento interno dos itens do submenu */
+  color: #fff; /* Cor do texto */
+}
+
+nav ul ul li:hover {
+  background-color: #e76f51; /* Altera a cor de fundo no hover */
+}
+
+/* Estilo para os links do menu */
+nav ul li a {
+  text-decoration: none; /* Remove o sublinhado */
+  color: #333; /* Cor do texto */
+  font-weight: bold;
+  display: block; /* Garante que o link ocupe o tamanho do item */
+  padding: 10px 20px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efeito de hover nos links */
+nav ul li a:hover {
+  color: white;
+  background-color: #555; /* Destaque ao passar o mouse */
+  border-radius: 5px;
+}
+
+/* Grid de conteúdo principal */
+main {
+  display: grid; /* Cria uma grade flexível */
+  grid-template-columns: repeat(2, 1fr); /* Divide em 2 colunas iguais */
+  gap: 20px; /* Espaço entre os itens */
+  padding: 20px; /* Espaçamento interno geral */
+  max-width: 1200px; /* Define largura máxima */
+  margin: 20px auto; /* Centraliza horizontalmente com margens automáticas */
+}
+
+.cubo {
+  background-color: #fff; /* Cor de fundo dos "cubos" */
+  border: 1px solid #ddd; /* Bordas finas e cinzas */
+  border-radius: 8px; /* Arredonda os cantos */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  overflow: hidden; /* Evita que elementos saiam dos limites */
+  transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+  text-align: center; /* Centraliza o conteúdo */
+}
+
+.cubo:hover {
+  transform: scale(1.05); /* Aumenta ligeiramente o cubo no hover */
+}
+
+.cubo a {
+  text-decoration: none; /* Remove sublinhado dos links */
+  color: inherit; /* Herda a cor do pai */
+}
+
+.cubo img {
+  width: 100%; /* Garante que a imagem ocupe toda a largura do cubo */
+  height: auto; /* Mantém a proporção da imagem */
+  max-height: 325px; /* Define uma altura máxima usual */
+  object-fit: cover; /* Faz com que a imagem preencha o espaço sem distorcer */
+  display: block;
+}
+
+.cubo h4 {
+  padding: 10px; /* Espaçamento interno do texto */
+  font-size: 1em; /* Define o tamanho da fonte */
+}
+
+/* Footer (rodapé) */
+footer {
+  background-color: #264653; /* Cor de fundo do rodapé */
+  color: #fff; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  padding: 10px 0; /* Espaçamento interno */
+  margin-top: 20px; /* Espaço acima do rodapé */
+}
+
+footer p {
+  margin: 5px 0; /* Margem mínima entre parágrafos */
+  font-size: 0.9em; /* Tamanho menor para o texto */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em; /* Reduz o tamanho do título principal */
+  }
+
+  header h2 {
+    font-size: 1em; /* Reduz o subtítulo */
+  }
+
+  main {
+    grid-template-columns: 1fr; /* Ajusta para uma coluna no grid */
+    padding: 10px;
+  }
+
+  .cubo h4 {
+    font-size: 0.9em; /* Reduz o tamanho da descrição nos cubos */
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column; /* Menu vertical em telas menores */
+    align-items: center; /* Centraliza os itens do menu */
+  }
+
+  nav ul li {
+    padding: 10px 15px; /* Reduz o espaçamento interno */
+  }
+
+  header h1 {
+    font-size: 1.8em; /* Reduz ainda mais o título principal */
+  }
+
+  header h2 {
+    font-size: 0.9em; /* Ajusta o subtítulo */
+  }
+
+  footer p {
+    font-size: 0.8em; /* Reduz o tamanho do texto no rodapé */
+  }
+}
